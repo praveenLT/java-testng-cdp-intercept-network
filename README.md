@@ -1,4 +1,4 @@
-# Java TestNG Selenium 
+# How to intercept network with Java-TestNG on LambdaTest cloud
 
 ### Environment Setup
 
