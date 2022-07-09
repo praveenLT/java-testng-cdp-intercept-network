@@ -34,7 +34,7 @@ Set LambdaTest Username and Access Key in environment variables.
    $ set LT_USERNAME="YOUR_USERNAME"
    $ set LT_ACCESS_KEY="YOUR ACCESS KEY"
    ```
-    ```
+
 ### Intercept network requests
 
 The following code can be used to intercept network requests:
