@@ -34,7 +34,25 @@ Set LambdaTest Username and Access Key in environment variables.
    $ set LT_USERNAME="YOUR_USERNAME"
    $ set LT_ACCESS_KEY="YOUR ACCESS KEY"
    ```
-    
+    ```
+### Intercept network requests
+
+The following code can be used to intercept network requests:
+```java
+DevTools devTools = ((HasDevTools) driver).getDevTools();
+devTools.createSession();
+
+Supplier<InputStream> message = () -> new ByteArrayInputStream(
+   "Creamy, delicious cheese!".getBytes(StandardCharsets.UTF_8));
+
+NetworkInterceptor interceptor = new NetworkInterceptor(
+   driver,
+   Route.matching(req -> true)
+   .to(() -> req -> new HttpResponse()
+   .setStatus(200)
+   .addHeader("Content-Type", StandardCharsets.UTF_8.toString())
+   .setContent(message)));
+```                                
 ### Running Tests
 
 ```
